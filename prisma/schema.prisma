@@ -23,7 +23,7 @@ model User {
   role         Role   @default(Watcher)
 
   UserPreference   UserPreference? @relation(fields: [userPreferenceId], references: [id])
-  userPreferenceId String? @unique
+  userPreferenceId String?         @unique
 
   @@unique([name, age])
   @@index([email]) // that is indexing for the field
